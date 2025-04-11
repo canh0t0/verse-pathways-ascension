@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,38 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// New custom colors for our skill tree
+				faith: {
+					DEFAULT: '#8B5CF6', // Vivid Purple
+					light: '#E5DEFF',  // Soft Purple
+					dark: '#6E59A5',   // Tertiary Purple
+				},
+				love: {
+					DEFAULT: '#D946EF', // Magenta Pink
+					light: '#F9D3FC',
+					dark: '#B026C2',
+				},
+				prayer: {
+					DEFAULT: '#0EA5E9', // Ocean Blue
+					light: '#D3E4FD',   // Soft Blue
+					dark: '#0B7EB5',
+				},
+				peace: {
+					DEFAULT: '#33C3F0', // Sky Blue
+					light: '#D4F1FD',
+					dark: '#2496B9',
+				},
+				servant: {
+					DEFAULT: '#7E69AB', // Secondary Purple
+					light: '#D6BCFA',   // Light Purple
+					dark: '#5D4D81',
+				},
+				completed: '#FFD700',   // Gold for completed achievements
+			},
+			fontFamily: {
+				serif: ['Merriweather', 'serif'],
+				sans: ['Inter', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +116,25 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse-glow': {
+					'0%, 100%': { 
+						boxShadow: '0 0 8px 2px rgba(139, 92, 246, 0.4)'
+					},
+					'50%': { 
+						boxShadow: '0 0 16px 4px rgba(139, 92, 246, 0.7)'
+					},
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-5px)' },
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+				'float': 'float 3s ease-in-out infinite',
 			}
 		}
 	},
