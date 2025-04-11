@@ -17,16 +17,16 @@ const SkillTree: React.FC = () => {
     
     if (node.completed) {
       toast({
-        title: "Achievement Complete",
-        description: `You've already completed: ${node.label}`,
+        title: "Conquista Completa",
+        description: `Você já completou: ${node.label}`,
       });
       return;
     }
     
     if (node.inProgress) {
       toast({
-        title: "In Progress",
-        description: `Share ${node.versesNeeded - node.versesShared} more verses to complete this achievement.`,
+        title: "Em Progresso",
+        description: `Compartilhe mais ${node.versesNeeded - node.versesShared} versículos para completar essa conquista.`,
       });
       return;
     }
@@ -54,8 +54,8 @@ const SkillTree: React.FC = () => {
       });
       
       toast({
-        title: "Achievement Started",
-        description: `You've started working on: ${node.label}`,
+        title: "Conquista Iniciada",
+        description: `Você começou a trabalhar em: ${node.label}`,
       });
     }
   };
@@ -63,10 +63,10 @@ const SkillTree: React.FC = () => {
   return (
     <div className="skill-tree-container mx-auto p-6 max-w-5xl">
       <header className="mb-8 text-center">
-        <h1 className="text-3xl font-serif font-bold mb-2">Verse Pathways</h1>
+        <h1 className="text-3xl font-serif font-bold mb-2">Caminhos de Versículos</h1>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          Share scripture verses to unlock achievements and earn seals for each theme.
-          Complete all five branches to earn the ultimate Tree Master seal.
+          Compartilhe versículos das escrituras para desbloquear conquistas e ganhar selos para cada tema.
+          Complete todos os cinco ramos para ganhar o selo supremo de Mestre da Árvore.
         </p>
       </header>
       
@@ -86,14 +86,14 @@ const SkillTree: React.FC = () => {
           <div className="bg-white p-6 rounded-xl shadow-md flex flex-col items-center">
             <MasterSeal earned={treeData.masterSealEarned} />
             <p className="mt-4 text-center text-sm text-gray-600">
-              Complete all five branches to earn the Tree Master seal and 
-              complete this season's challenge!
+              Complete todos os cinco ramos para ganhar o selo de Mestre da Árvore e 
+              completar o desafio desta temporada!
             </p>
           </div>
           
           <div className="hidden md:block">
             <div className="bg-white p-6 rounded-xl shadow-md">
-              <h3 className="text-lg font-serif font-semibold mb-4">Season Progress</h3>
+              <h3 className="text-lg font-serif font-semibold mb-4">Progresso da Temporada</h3>
               
               <div className="space-y-4">
                 {treeData.themes.map((theme) => (
@@ -106,7 +106,7 @@ const SkillTree: React.FC = () => {
               
               <div className="mt-6 pt-4 border-t border-gray-100">
                 <div className="flex items-center justify-between">
-                  <span className="font-medium">Total Progress:</span>
+                  <span className="font-medium">Progresso Total:</span>
                   <span className="text-gray-600">
                     {treeData.themes.reduce((acc, theme) => acc + theme.completedNodes, 0)}/
                     {treeData.themes.reduce((acc, theme) => acc + theme.totalNodes, 0)}
@@ -117,23 +117,23 @@ const SkillTree: React.FC = () => {
           </div>
           
           <div className="bg-white p-6 rounded-xl shadow-md">
-            <h3 className="text-lg font-serif font-semibold mb-4">How It Works</h3>
+            <h3 className="text-lg font-serif font-semibold mb-4">Como Funciona</h3>
             <ul className="space-y-2 text-sm text-gray-600">
               <li className="flex items-start">
                 <span className="text-primary mr-2">•</span>
-                <span>Share 7 verses for each node to complete it</span>
+                <span>Compartilhe 7 versículos para cada nó para completá-lo</span>
               </li>
               <li className="flex items-start">
                 <span className="text-primary mr-2">•</span>
-                <span>Complete all 7 nodes in a branch to earn that theme's seal</span>
+                <span>Complete todos os 7 nós em um ramo para ganhar o selo daquele tema</span>
               </li>
               <li className="flex items-start">
                 <span className="text-primary mr-2">•</span>
-                <span>Complete all 5 branches to earn the Tree Master seal</span>
+                <span>Complete todos os 5 ramos para ganhar o selo de Mestre da Árvore</span>
               </li>
               <li className="flex items-start">
                 <span className="text-primary mr-2">•</span>
-                <span>Each season brings new challenges and rewards</span>
+                <span>Cada temporada traz novos desafios e recompensas</span>
               </li>
             </ul>
           </div>

@@ -73,12 +73,15 @@ const SkillNode: React.FC<SkillNodeProps> = ({ node, canActivate, onClick }) => 
           "relative rounded-full border-2 flex items-center justify-center cursor-pointer transition-all duration-300",
           getNodeSizeClass(),
           getStatusClass(),
-          node.completed && "animate-pulse-glow",
+          // Removido o efeito de piscada: node.completed && "animate-pulse-glow",
           node.position === 7 && node.completed && "ring-4 ring-completed/50"
         )}
         aria-label={node.label}
       >
-        {getThemeIcon(node.theme, node.position === 7 ? 24 : 20)}
+        {/* Aplicar cor dourada aos ícones completados */}
+        <div className={node.completed ? "text-completed" : ""}>
+          {getThemeIcon(node.theme, node.position === 7 ? 24 : 20)}
+        </div>
         {getStatusIcon()}
       </button>
       
@@ -99,7 +102,7 @@ const SkillNode: React.FC<SkillNodeProps> = ({ node, canActivate, onClick }) => 
         {node.description}
         {node.inProgress && (
           <span className="block font-bold text-xs mt-1">
-            Progress: {node.versesShared}/{node.versesNeeded}
+            Progresso: {node.versesShared}/{node.versesNeeded}
           </span>
         )}
       </div>

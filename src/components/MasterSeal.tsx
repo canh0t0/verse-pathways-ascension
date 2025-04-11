@@ -1,6 +1,6 @@
 
 import { cn } from "@/lib/utils";
-import { Award } from "lucide-react";
+import { TreeDeciduous } from "lucide-react";
 
 interface MasterSealProps {
   earned: boolean;
@@ -14,10 +14,10 @@ const MasterSeal: React.FC<MasterSealProps> = ({ earned, className }) => {
         <div className={cn(
           "w-20 h-20 rounded-full flex items-center justify-center",
           earned 
-            ? "bg-gradient-to-br from-yellow-300 to-yellow-600 animate-pulse-glow animate-float" 
+            ? "bg-gradient-to-br from-yellow-300 to-yellow-600 animate-float" 
             : "bg-gray-200"
         )}>
-          <Award 
+          <TreeDeciduous 
             className={cn(
               "w-14 h-14", 
               earned ? "text-white" : "text-gray-400"
@@ -33,7 +33,7 @@ const MasterSeal: React.FC<MasterSealProps> = ({ earned, className }) => {
         "mt-2 font-semibold",
         earned ? "text-completed" : "text-gray-400"
       )}>
-        {earned ? "Tree Master" : "Complete all branches"}
+        {earned ? "Mestre da Árvore" : "Complete todos os ramos"}
       </span>
     </div>
   );
