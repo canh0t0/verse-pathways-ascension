@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { cn } from '@/lib/utils';
 import { SkillNode as SkillNodeType, ThemeInfo } from '@/types/skill-tree';
 import SkillNode from './SkillNode';
 import ThemeSeal from './ThemeSeal';
