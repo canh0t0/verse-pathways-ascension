@@ -17,18 +17,20 @@ interface ThemeBranchProps {
   onNodeClick: (nodeId: string) => void;
 }
 
-const getThemeIcon = (themeId: string, size = 24) => {
+const getThemeIcon = (themeId: string, size = 24, isCompleted = false) => {
+  const iconClass = isCompleted ? "text-completed-dark" : "";
+  
   switch (themeId) {
     case 'faith':
-      return <Church size={size} />;
+      return <Church size={size} className={iconClass} />;
     case 'love':
-      return <Heart size={size} />;
+      return <Heart size={size} className={iconClass} />;
     case 'prayer':
-      return <MessageCircle size={size} />;
+      return <MessageCircle size={size} className={iconClass} />;
     case 'peace':
-      return <Leaf size={size} />;
+      return <Leaf size={size} className={iconClass} />;
     case 'servant':
-      return <Users size={size} />;
+      return <Users size={size} className={iconClass} />;
     default:
       return null;
   }
@@ -50,8 +52,11 @@ const ThemeBranch: React.FC<ThemeBranchProps> = ({ theme, nodes, onNodeClick }) 
   return (
     <div className="theme-branch mb-12 relative">
       <div className="flex items-center mb-4">
-        <div className={`p-2 rounded-full bg-${theme.id}-light text-${theme.id} mr-3`}>
-          {getThemeIcon(theme.id)}
+        <div className={cn(
+          `p-2 rounded-full ${theme.completed ? "bg-completed-dark/10" : `bg-${theme.id}-light`} ${theme.completed ? "text-completed-dark" : `text-${theme.id}`} mr-3`,
+          theme.completed && "ring-2 ring-completed-dark/30"
+        )}>
+          {getThemeIcon(theme.id, 24, theme.completed)}
         </div>
         <h3 className="text-xl font-serif font-semibold">{theme.name}</h3>
         {theme.completed && <ThemeSeal theme={theme.id} className="ml-2" />}
@@ -65,7 +70,7 @@ const ThemeBranch: React.FC<ThemeBranchProps> = ({ theme, nodes, onNodeClick }) 
             y1="0" 
             x2="100%" 
             y2="0" 
-            className={`skill-connection stroke-${theme.id}/30`}
+            className={`skill-connection ${theme.completed ? `stroke-completed-dark/30` : `stroke-${theme.id}/30`}`}
             strokeWidth="2"
           />
         </svg>

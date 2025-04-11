@@ -1,4 +1,3 @@
-
 import { SkillTreeData, ThemeType } from "@/types/skill-tree";
 
 export const skillTreeData: SkillTreeData = {
@@ -36,9 +35,9 @@ export const skillTreeData: SkillTreeData = {
       name: 'Peace',
       description: 'Share scriptures about peace and tranquility in Christ',
       icon: 'leaf',
-      completed: false,
+      completed: true,
       totalNodes: 7,
-      completedNodes: 1,
+      completedNodes: 7,
     },
     {
       id: 'servant',
@@ -288,7 +287,7 @@ export const skillTreeData: SkillTreeData = {
       versesShared: 0,
     },
     
-    // Peace nodes
+    // Peace nodes - todos completos
     {
       id: 'peace-1',
       label: 'Peace Seeker',
@@ -306,10 +305,10 @@ export const skillTreeData: SkillTreeData = {
       description: 'Share 7 verses about peace in difficult times',
       theme: 'peace',
       position: 2,
-      completed: false,
-      inProgress: true,
+      completed: true,
+      inProgress: false,
       versesNeeded: 7,
-      versesShared: 1,
+      versesShared: 7,
     },
     {
       id: 'peace-3',
@@ -317,10 +316,10 @@ export const skillTreeData: SkillTreeData = {
       description: 'Share 7 verses about making peace with others',
       theme: 'peace',
       position: 3,
-      completed: false,
+      completed: true,
       inProgress: false,
       versesNeeded: 7,
-      versesShared: 0,
+      versesShared: 7,
     },
     {
       id: 'peace-4',
@@ -328,10 +327,10 @@ export const skillTreeData: SkillTreeData = {
       description: 'Share 7 verses about cultivating peace',
       theme: 'peace',
       position: 4,
-      completed: false,
+      completed: true,
       inProgress: false,
       versesNeeded: 7,
-      versesShared: 0,
+      versesShared: 7,
     },
     {
       id: 'peace-5',
@@ -339,10 +338,10 @@ export const skillTreeData: SkillTreeData = {
       description: 'Share 7 verses about practicing peace daily',
       theme: 'peace',
       position: 5,
-      completed: false,
+      completed: true,
       inProgress: false,
       versesNeeded: 7,
-      versesShared: 0,
+      versesShared: 7,
     },
     {
       id: 'peace-6',
@@ -350,10 +349,10 @@ export const skillTreeData: SkillTreeData = {
       description: 'Share 7 verses about representing peace',
       theme: 'peace',
       position: 6,
-      completed: false,
+      completed: true,
       inProgress: false,
       versesNeeded: 7,
-      versesShared: 0,
+      versesShared: 7,
     },
     {
       id: 'peace-7',
@@ -361,10 +360,10 @@ export const skillTreeData: SkillTreeData = {
       description: 'Share 7 verses about perfect peace',
       theme: 'peace',
       position: 7,
-      completed: false,
+      completed: true,
       inProgress: false,
       versesNeeded: 7,
-      versesShared: 0,
+      versesShared: 7,
     },
     
     // Servant nodes

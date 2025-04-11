@@ -29,7 +29,7 @@ const ThemeSeal: React.FC<ThemeSealProps> = ({
     >
       <Award 
         className={cn(
-          "text-completed fill-completed", 
+          "text-completed-dark fill-completed-dark", 
           size === 'sm' ? 'w-6 h-6' : size === 'md' ? 'w-8 h-8' : 'w-12 h-12'
         )} 
       />

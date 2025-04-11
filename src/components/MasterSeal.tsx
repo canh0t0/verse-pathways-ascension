@@ -14,7 +14,7 @@ const MasterSeal: React.FC<MasterSealProps> = ({ earned, className }) => {
         <div className={cn(
           "w-20 h-20 rounded-full flex items-center justify-center",
           earned 
-            ? "bg-gradient-to-br from-yellow-300 to-yellow-600 animate-float" 
+            ? "bg-gradient-to-br from-amber-400 to-amber-600 animate-float" 
             : "bg-gray-200"
         )}>
           <TreeDeciduous 
@@ -31,7 +31,7 @@ const MasterSeal: React.FC<MasterSealProps> = ({ earned, className }) => {
       </div>
       <span className={cn(
         "mt-2 font-semibold",
-        earned ? "text-completed" : "text-gray-400"
+        earned ? "text-completed-dark" : "text-gray-400"
       )}>
         {earned ? "Mestre da Árvore" : "Complete todos os ramos"}
       </span>

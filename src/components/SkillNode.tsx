@@ -73,13 +73,12 @@ const SkillNode: React.FC<SkillNodeProps> = ({ node, canActivate, onClick }) => 
           "relative rounded-full border-2 flex items-center justify-center cursor-pointer transition-all duration-300",
           getNodeSizeClass(),
           getStatusClass(),
-          // Removido o efeito de piscada: node.completed && "animate-pulse-glow",
           node.position === 7 && node.completed && "ring-4 ring-completed/50"
         )}
         aria-label={node.label}
       >
-        {/* Aplicar cor dourada aos ícones completados */}
-        <div className={node.completed ? "text-completed" : ""}>
+        {/* Aplicar cor dourada escura aos ícones completados */}
+        <div className={node.completed ? "text-completed-dark" : ""}>
           {getThemeIcon(node.theme, node.position === 7 ? 24 : 20)}
         </div>
         {getStatusIcon()}

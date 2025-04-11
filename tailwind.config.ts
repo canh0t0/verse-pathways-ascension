@@ -89,7 +89,10 @@ export default {
 					light: '#D6BCFA',   // Light Purple
 					dark: '#5D4D81',
 				},
-				completed: '#FFD700',   // Gold for completed achievements
+				completed: {
+                    DEFAULT: '#FFD700',   // Gold for completed achievements
+                    dark: '#B8860B',     // Darker gold (DarkGoldenrod)
+                },
 			},
 			fontFamily: {
 				serif: ['Merriweather', 'serif'],
@@ -117,14 +120,6 @@ export default {
 						height: '0'
 					}
 				},
-				'pulse-glow': {
-					'0%, 100%': { 
-						boxShadow: '0 0 8px 2px rgba(139, 92, 246, 0.4)'
-					},
-					'50%': { 
-						boxShadow: '0 0 16px 4px rgba(139, 92, 246, 0.7)'
-					},
-				},
 				'float': {
 					'0%, 100%': { transform: 'translateY(0)' },
 					'50%': { transform: 'translateY(-5px)' },
@@ -133,7 +128,6 @@ export default {
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
 				'float': 'float 3s ease-in-out infinite',
 			}
 		}
